@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
 
-<form type="post" method="/product/update/{{ $product->id }}" enctype="multipart/form-data">
+<form method="post" action="/product/update/{{ $product->id }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>

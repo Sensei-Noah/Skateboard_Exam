@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index']);
 
+Route::get('/administration', [ProductController::class, 'administration']);
+
 Route::prefix('product')->group(function(){
 
     Route::get('/create', [ProductController::class, 'create']);
@@ -28,6 +30,8 @@ Route::prefix('product')->group(function(){
     Route::get('/edit/{product}', [ProductController::class, 'edit']);
 
     Route::get('/show/{product}', [ProductController::class, 'show']);
+
+    Route::get('/delete/{product}', [ProductController::class, 'destroy']);
 
 });
 

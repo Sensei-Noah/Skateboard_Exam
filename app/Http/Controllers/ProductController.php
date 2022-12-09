@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::All();
+        $product = Product::paginate(10);
         return view('pages.home', compact('product'));
     }
 
@@ -90,7 +90,6 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        $product = Product::All();
         return view('pages.edit-product', compact('product'));
     }
 
@@ -103,7 +102,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        if($product->image){
+        if($request->image){
             File::delete(storage_path('app/public/'.$product->image));
         }
 

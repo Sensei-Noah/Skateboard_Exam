@@ -19,6 +19,9 @@
     </div>
 
     @endforeach
+    <div class="d-flex justify-content-end md-4 pt-2">
+        {{ $product->links() }}
+    </div>
 </div>
 
 @endsection
